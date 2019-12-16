@@ -31,3 +31,33 @@ const sumArray = (array) => {
     return sum
 }
 console.log(sumArray([1, 2, 3, 4, 5, 6]));
+
+// Prime Numbers
+const checkPrime = (num) => {
+    for(let i = 2; i < num; i++) {
+        if(num % i === 0) {
+            return false
+        }  
+        }
+        return true
+    }
+    
+
+console.log(checkPrime(11));
+console.log(checkPrime(10));
+
+// Print Prime Numbers
+// use checkPrime function to console.log all prime numbers
+// go the each number from 0 to the number printing out 
+// only the prime numbers.
+const printPrimes = (num) => {
+    for (let i = 0; i < num; i++) {
+        if (checkPrime(i) !== false) {
+           console.log (i)
+        }
+    }
+    return num
+}
+
+console.log(printPrimes(97));
+
