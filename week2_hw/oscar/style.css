@@ -1,212 +1,198 @@
-
 * {
-    
-    font-family: Arial, Helvetica, sans-serif; 
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-  }
-
-  h2 {
-      display: inline;
-      float: left;
-      padding: 10px;
-      color:  rgb(19, 122, 232);
-  }
-
-  li a {
-    float: right;
-    display: inline;
-    text-decoration: none;
-    color: grey;
-    
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  float: right;
+  flex-direction: row;
 }
 
-  li button {
-    float: right;
-    display: inline;
-  }
-
-  li h4 {
-    float: right;
-    display: inline;
-  }
-
-  .block1 {
-      clear: both;
-      background:  rgb(19, 122, 232);
-      width: auto;
-      margin: 5px;
-      padding: 10px;   
-  }
-
-  .block1 h1 {
-      color: white;
-      width: 25%;
-      padding: 0px 3.4em;
-      text-align: center;
-      
-  }
-
-  .block1 p {
-    margin: 20px 50px 20px 3em;
-      color: white;
-      width: 25%;
-      padding: 0px 100px;
-      text-align: left;
-      font-size: 20px;
-      line-height: 1;
-      
-  }
-
-  .block1 button {
-    margin: 30px 50px 50px 10em;
-    width: 15%;
-    border: none;
-    display: block;
-    padding: 14px 28px;
-    font-size: 16px;
-    border-radius: 5px;
-    color:  rgb(19, 122, 232);
+li {
+  display: inline-block;
+  padding: 15px;
+ 
 }
-  
-  .concierge {
-      float: left;
-      border: 2px solid grey;
-      border-radius: 25px;
-      height: 31em;
-      width: 21.3em;
-      padding: 10px;
-      margin: 5px 7px 5px 25px;
-      text-align: center;
-      overflow: hidden;
-  }
 
-   .concierge button {
-    height: 25px;
-    width: 40%;
-    font-size: 16px;
-    border-radius: 5px;
-    color: grey;
-  }
+h2 {
+  display: inline;
+  float: left;
+  padding: 10px;
+  color: rgb(19, 122, 232);
+}
 
-  .doctor {
-    float: left;
-    border: 2px solid grey;
-    border-radius: 25px;
-    height: 31em;
-    width: 21.3em;
-    padding: 10px;
-    margin: 5px;
-    text-align: center;
-    overflow: hidden;
-  }
-
-  .doctor button {
-    height: 25px;
-    width: 40%;
-    font-size: 16px;
-    border-radius: 5px;
-    color: grey;
-  }
-
-  .family {
-    float: left;
-    border: 2px solid grey;
-    border-radius: 25px;
-    height: 31em;
-    width: 21.3em;
-    padding: 10px;
-    margin: 5px;
-    text-align: center;
-    overflow: hidden;
-  }
-
-  .family button {
-    height: 25px;
-    width: 40%;
-    font-size: 16px;
-    border-radius: 5px;
-    color: grey;
-  }
-
-  .member{
-    clear: both;
-    text-align: center;
-   padding: 5em;
-  }
-
-  h3 {
-      font-weight: 100;
-      font-size: 24px;
-      color: grey;
-  }
-
-  .member h1 {
-      font-size: 50px;
-  }
+li a {
+  text-decoration: none;
+  color:rgb(19, 19, 19);
+}
 
 
 
+.block1 {
+  clear: both;
+  background: rgb(19, 122, 232);
+  width: auto;
+  margin: 5px;
+  padding: 10px;
+}
 
-  h4 {
-      font-weight: 100;
-      color: grey;
-  }
+.block1 h1 {
+  color: white;
+  width: 25%;
+  padding: 0px 3.4em;
+  text-align: center;
+}
 
-  p {
-     line-height: 2; 
-  }
+.block1 p {
+  margin: 20px 50px 20px 3em;
+  color: white;
+  width: 25%;
+  padding: 0px 100px;
+  text-align: left;
+  font-size: 20px;
+  line-height: 1;
+}
 
-  #you {
-      color: whitesmoke;
-      background-color: rgb(19, 122, 232);
-      height: 3em;
-      width: 12em;
-      font-size: 24px;
-      border-radius: 5px;
-  }
+.block1 button {
+  margin: 30px 50px 50px 10em;
+  width: 15%;
+  border: none;
+  display: block;
+  padding: 14px 28px;
+  font-size: 16px;
+  border-radius: 5px;
+  color: rgb(19, 122, 232);
+}
 
-  .member button {
-    color:  rgb(19, 122, 232);;
-    background-color:white;
-    height: 3em;
-    width: 12em;
-    font-size: 24px;
-    border-radius: 5px;
-  }
+.concierge {
+  float: left;
+  border: 2px solid grey;
+  border-radius: 25px;
+  height: 31em;
+  width: 21.3em;
+  padding: 10px;
+  margin: 5px 7px 5px 25px;
+  text-align: center;
+  overflow: hidden;
+}
 
-  footer {
-    border-top: 1px solid gray;
-    margin-top: 20em;
-  }
+.concierge button {
+  height: 25px;
+  width: 40%;
+  font-size: 16px;
+  border-radius: 5px;
+  color: grey;
+}
 
- table {
-     padding-top: 5em;
-     margin-left: 10em;
-     display: inline-block;
-     text-align: justify;
- }
+.doctor {
+  float: left;
+  border: 2px solid grey;
+  border-radius: 25px;
+  height: 31em;
+  width: 21.3em;
+  padding: 10px;
+  margin: 5px;
+  text-align: center;
+  overflow: hidden;
+}
 
- td {
-     font-weight: 100;
-     padding: 15px 40px 15px 20px; 
- }
+.doctor button {
+  height: 25px;
+  width: 40%;
+  font-size: 16px;
+  border-radius: 5px;
+  color: grey;
+}
 
- td a {
-     text-decoration: none;
-     color: grey;
- }
+.family {
+  float: left;
+  border: 2px solid grey;
+  border-radius: 25px;
+  height: 31em;
+  width: 21.3em;
+  padding: 10px;
+  margin: 5px;
+  text-align: center;
+  overflow: hidden;
+}
 
+.family button {
+  height: 25px;
+  width: 40%;
+  font-size: 16px;
+  border-radius: 5px;
+  color: grey;
+}
 
+.member {
+  clear: both;
+  text-align: center;
+  padding: 5em;
+}
 
+h3 {
+  font-weight: 100;
+  font-size: 24px;
+  color: grey;
+}
 
-  
+.member h1 {
+  font-size: 50px;
+}
 
-  
+h4 {
+  font-weight: 100;
+  color: grey;
+}
 
-  
-  
+p {
+  line-height: 2;
+}
+
+#you {
+  color: whitesmoke;
+  background-color: rgb(19, 122, 232);
+  height: 3em;
+  width: 12em;
+  font-size: 24px;
+  border-radius: 5px;
+}
+
+.member button {
+  color: rgb(19, 122, 232);
+  background-color: white;
+  height: 3em;
+  width: 12em;
+  font-size: 24px;
+  border-radius: 5px;
+}
+
+footer {
+  border-top: 1px solid gray;
+  margin-top: 20em;
+}
+
+table {
+  padding-top: 5em;
+  margin-left: 10em;
+  display: inline-block;
+  text-align: justify;
+}
+
+td {
+  font-weight: 100;
+  padding: 5px 40px 5px 20px;
+}
+
+td a {
+  text-decoration: none;
+  color: grey;
+}
+
+th {
+  padding-left: 22px;
+  color: rgb(19, 19, 19);
+  font-weight: 200;
+}
