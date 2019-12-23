@@ -29,19 +29,42 @@ A list of student names from our class, each with a location.
         alex: 'Chicago'
     }
 A list of student names from our class, each with a location and each with a list of favorite tv shows.
-    datatype: array of objects
-    ex: [
-        aarik {
+    datatype: objects
+    ex: {
+        aarik: {
             location: 'Pinole',
             show: 'The Office',
         },
-        loki {
+        loki: {
             location: 'New York',
             show: 'Thor Ragnarock',
         },
-        alex {
+        alex: {
             location: 'Chicago',
             show: 'Breaking Bad'
         }
-    ]
+    }
 */
+//////////////////
+// Take it easy//
+////////////////
+
+// Make an array that holds all of the colors of the rainbow.
+let rainbow = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet']
+
+// Write code that will access "blue" from the rainbow array.
+console.log(rainbow[4])
+// Make an object that is called your name and holds the information about 
+// your favorite food, a hobby, the name of the town that you live in currently, 
+// and your favorite datatype.
+const aarik = {
+    food: "tacos",
+    hobby: "Muay Thai",
+    town: 'Pinole',
+    datatype: 'objects'
+}
+
+// Write code that will access your hobby from the object that you just created.
+console.log(aarik.hobby)
+
+
