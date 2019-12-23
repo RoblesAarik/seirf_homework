@@ -67,4 +67,49 @@ const aarik = {
 // Write code that will access your hobby from the object that you just created.
 console.log(aarik.hobby)
 
+///////////////////
+// Crazy Objects//
+/////////////////
 
+const crazyObject = {
+    taco: [{meat: 'steak',
+           cheese: ['panela', 'queso', 'chihuahua']},
+           {meat: 'chicken',
+            salsa: ["pico", "hot", "hotter", "really hot", "really really hot", "omg my mouth is burning"]},
+          ],
+    larry: {
+      nicknames: ["LD", "Chicken Teriyaki Boyyyyyy"],
+      quotes: ["Pretty pretty prettayyyyy good", "Is that a parkinson's thing?", "women love a self confident bald man", "I'm a walking talking enigma"],
+      characters: [{
+        name: "Jeff",
+        occupation: "manager"
+      },
+      {
+        name: "funkhauser",
+        occupation: "tv dude"
+      },
+      {
+        name: "susie",
+        occupation: "jeffs wife",
+        favourtieHobby: "Swearing at Larry and Jeff"
+      },
+      ]
+    }
+  }
+
+//  Use crazy Object to log the following.
+
+// 1. "omg my mouth is burning"
+console.log(crazyObject.taco[1].salsa[5])
+
+// 2. "Pretty pretty prettayyyyy good"
+console.log(crazyObject.larry.quotes[0])
+
+// 3. "Swearing at Larry and Jeff"
+console.log(crazyObject.larry.characters[2].favourtieHobby)
+
+// 4. "Chicken Teriyaki Boyyyyyy"
+console.log(crazyObject.larry.nicknames[1])
+
+// 5. The object the contains the name funkhauser
+console.log(crazyObject.larry.characters[1].name)
