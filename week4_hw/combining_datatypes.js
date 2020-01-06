@@ -115,3 +115,66 @@ const vendingMachine = {
 }
 
 console.log(vendingMachine.vend(2))
+
+////////////////////////
+// Callbacks
+
+// 1. Make a function add that takes two arguments (numbers) and sums them together
+    const add = (num1, num2) => {
+       let sum = num1 + num2;
+        return sum
+    }
+    console.log(add(1,2))
+
+// 2. Make a function subtract that takes two arguments (numbers) and subtracts them
+    const subtract = (num1,num2) => {
+        let sum = num1 - num2;
+        return sum
+    }
+
+    console.log(subtract(3,1))
+// 3. Make a function multiply that takes two arguments and multiplies them
+    const multiply = (num1 , num2) => {
+        let product = num1 * num2;
+        return product
+    }
+
+    console.log(multiply(4,2))
+// 4. Make a function divide that takes two arguments and divides them
+    const divide = (num1,num2) => {
+        let product = num1 / num2;
+        return product
+    }
+
+    console.log(divide(10,2))
+
+// 5. Make a function calculate that takes three arguments. Assume the two arguments are a number ie num1, num2 and a function called operates (a callback).
+const calculate = (num1, num2, callback) => {
+   let answer = callback(num1,num2)
+    return answer
+}
+    
+// 6. Make it so that when calculate is invoked, the callback "operates" on the numbers and returns the value.
+// ANSWER ABOVE
+
+// 7. Call calculate 4 times, each time using one of the operation functions you wrote
+console.log(calculate(3,5,multiply))
+console.log(calculate(20,15,subtract))
+console.log(calculate(100,45,add))
+console.log(calculate(50,10,divide))
+
+///////////////
+// Function defenition placement
+
+const bar = () => {
+    console.log('bar here');
+}
+bar();
+
+
+const foo = () => {
+    console.log('foo here');
+}
+foo();
+
+//Javascript reads code from top to bottom. When the function is invoked before it is defined javascript cant find what is being called. 
