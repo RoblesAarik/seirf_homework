@@ -113,7 +113,7 @@ console.log(gus)
 
 // 8. Have Timmy "buy" Gus
 timmy.buyHamster(gus)
-console.log(timmy)
+
 // 9. Age Timmy 15 years
 timmy.ageUp()
 timmy.ageUp()
@@ -129,3 +129,4 @@ timmy.eat()
 // 11.Have Timmy exercise twice
 timmy.exercise()
 timmy.exercise()
+console.log(timmy)
