@@ -111,6 +111,7 @@ console.log(dougie.announceHealth())
 console.log(pizza.announceHealth())
 
 // Fight
+// Updated Fight methods in both classes
 
 // 1. Have Pizza Rat fight Dougie
 console.log(pizza.fight(dougie))
