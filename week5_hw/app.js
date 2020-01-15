@@ -133,8 +133,7 @@ game.start()
 
 
 
-
-    // END turn function
+// PsuedoCode
 
     // USS Loki attacks first
         // check for hit
