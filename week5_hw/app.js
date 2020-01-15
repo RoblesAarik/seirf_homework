@@ -1,7 +1,8 @@
 console.log("It Works")
-
+// Can't get game to WIN when all alien fleet is destroyed.
+   
     // Game object
-    const game = {
+   const game = {
          // Game end Logic
         win() {
                 alert("Fleet destryed Captian! Let's get outta here.")
