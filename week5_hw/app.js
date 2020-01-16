@@ -1,5 +1,4 @@
 console.log("It Works")
-// Can't get game to WIN when all alien fleet is destroyed.
    
     // Game object
    const game = {
@@ -43,8 +42,6 @@ let ussLoki = {
     attack(enemy) {
         if(this.hull <= 0) {
             game.lose()
-        } else if (alienFleet === []) {
-            game.win()
         } else {
             this.attackChance(enemy)
         }
@@ -104,7 +101,7 @@ const createShip = () => {
         let i = 0;
         ship1 = ussLoki;
         ship2 = alienFleet[0];
-    if(alienFleet !== []) {
+    if(alienFleet.length !== 0) {
         ussLoki.attack(ship2);
         ship2.attack();
     } else {
