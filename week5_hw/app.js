@@ -2,7 +2,7 @@ console.log("It Works")
    
     // Game object
    const game = {
-         // Game end Logic
+         // Game Logic
         win() {
                 alert("Fleet destryed Captian! Let's get outta here.")
                 alert('Press ok to restart')
@@ -77,7 +77,7 @@ class Alienships {
 }
 
 
-
+// Create fleet of ships function
 
 let alienFleet = []
 let alienHull = [3,4,5,6]
