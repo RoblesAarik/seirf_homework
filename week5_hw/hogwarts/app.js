@@ -38,6 +38,8 @@ $(() => {
   $newWand("The Elder Wand");
   $removePet();
   $petCameHome($pet());
+  $hideStuff();
+  $addAndRemove();
 });
 
 // create a div with an id of container
@@ -164,4 +166,19 @@ const $petCameHome = () => {
     .text("Loki")
     .addClass("owl");
   $("h3").after($h4);
+};
+
+// Hide secret belonging
+const $hideStuff = () => {
+  let $secret = $(".secret");
+  $secret.hide("slow");
+  $secret.delay("2000");
+  $secret.show("slow");
+};
+
+// Add and remove cabbage class
+const $addAndRemove = () => {
+  $("li.owl")
+    .addClass("cabbage")
+    .removeClass("cabbage");
 };
