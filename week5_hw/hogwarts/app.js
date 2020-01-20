@@ -13,6 +13,26 @@ $(() => {
   $secret("Time Turner");
   $leash();
   $items("Bertie Bott's Every Flavor [Jelly] Beans");
+  $semester();
+  $createTable();
+  $createTr();
+  $createTh("Day");
+  $createTh("Classes");
+  $createTr();
+  $createTd("Monday", 2);
+  $createTd("Charms, Herbology, Divination", 2);
+  $createTr();
+  $createTd("Tuesday", 3);
+  $createTd("Transfiguration, Potions, Quidditch Practice", 3);
+  $createTr();
+  $createTd("Wednesday", 4);
+  $createTd("Defense Against the Dark Arts, Herbology, History of Magic", 4);
+  $createTr();
+  $createTd("Thrusday", 5);
+  $createTd("Transfiguration, Charms, Qudditch Practice", 5);
+  $createTr();
+  $createTd("Friday", 6);
+  $createTd("Potions, Defense Against the Dark Arts, Charms", 6);
 });
 
 // create a div with an id of container
@@ -77,4 +97,34 @@ const $leash = () => {
     .text("leash")
     .addClass("owl");
   $($li).appendTo("ul");
+};
+
+// Create h5 above table
+const $semester = () => {
+  let $h5 = $("<h5>").text("Spring 2020");
+  $("#container").append($h5);
+};
+
+// Create a table
+const $createTable = () => {
+  let $table = $("<table>");
+  $($table).appendTo("#container");
+};
+
+// Create tr elements
+const $createTr = () => {
+  let $tr = $("<tr>");
+  $("table").append($tr);
+};
+
+// Create th element in tr
+const $createTh = classes => {
+  let $th = $("<th>").text(classes);
+  $("tr").append($th);
+};
+
+// Create td elements in tr
+const $createTd = (classes, position) => {
+  let $td = $("<td>").text(classes);
+  $(`table tr:nth-child(${position})`).append($td);
 };
