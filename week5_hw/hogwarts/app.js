@@ -5,7 +5,7 @@ $(() => {
   $name();
   $house();
   $pet();
-  $wand();
+  $wand("Laurel wood with a unicorn hair core");
   $trunk();
   $items("Butter Beer");
   $secret("Invisibility Cloak");
@@ -33,6 +33,11 @@ $(() => {
   $createTr();
   $createTd("Friday", 6);
   $createTd("Potions, Defense Against the Dark Arts, Charms", 6);
+  $breakWand();
+  $drinkButterBeer();
+  $newWand("The Elder Wand");
+  $removePet();
+  $petCameHome($pet());
 });
 
 // create a div with an id of container
@@ -66,8 +71,8 @@ const $pet = () => {
 };
 
 // Create h4 with your wand
-const $wand = () => {
-  let $h4 = $("<h4>").text("Laurel wood with a unicorn hair core");
+const $wand = wand => {
+  let $h4 = $("<h4>").text(wand);
   $($h4).appendTo("#container");
 };
 
@@ -127,4 +132,36 @@ const $createTh = classes => {
 const $createTd = (classes, position) => {
   let $td = $("<td>").text(classes);
   $(`table tr:nth-child(${position})`).append($td);
+};
+
+// remove wand
+const $breakWand = () => {
+  $("h4")[1].remove();
+};
+
+// Drink Butter Beer
+const $drinkButterBeer = () => {
+  $("li")[0].remove();
+};
+
+// New wand
+const $newWand = wand => {
+  let $h4 = $("<h4>").text(wand);
+  $h4.css("color", "indigo");
+  $("h4").after($h4);
+};
+
+// Remove pet and send somewhere else
+const $removePet = () => {
+  $("h4")[0].remove();
+  $($pet()).appendTo("#container");
+};
+
+// Return pet to original spot
+const $petCameHome = () => {
+  $("h4.owl").remove();
+  let $h4 = $("<h4>")
+    .text("Loki")
+    .addClass("owl");
+  $("h3").after($h4);
 };
