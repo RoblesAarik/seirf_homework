@@ -40,6 +40,9 @@ $(() => {
   $petCameHome($pet());
   $hideStuff();
   $addAndRemove();
+  $newSchedule("Fall 2018");
+  $addToTopTrunk("Butter Beer");
+  $trunkToChest();
 });
 
 // create a div with an id of container
@@ -61,7 +64,9 @@ const $name = () => {
 
 // Create h3 with your house
 const $house = () => {
-  let $h3 = $("<h3>").text("Hufflepuff");
+  let $h3 = $("<h3>")
+    .text("Hufflepuff")
+    .css("color", "#CCCC00");
   $($h3).appendTo("#container");
 };
 
@@ -181,4 +186,20 @@ const $addAndRemove = () => {
   $("li.owl")
     .addClass("cabbage")
     .removeClass("cabbage");
+};
+
+// Update class schedule title
+const $newSchedule = semester => {
+  $("h5").replaceWith(semester);
+};
+
+// Add Butter Beer to top of trunk
+const $addToTopTrunk = item => {
+  let $li = $("<li>").text(item);
+  $("ul").prepend($li);
+};
+
+// Replace trunk with chest
+const $trunkToChest = () => {
+  $("ul").attr("storage", "chest");
 };
