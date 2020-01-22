@@ -28,7 +28,7 @@ const makeMiddleEarth = () => {
   // console.log("Trying to make middle earth.");
   console.log("Trying to make middle earth.");
   // 1. create a section tag with an id of middle-earth
-  let $section = $("<section>");
+  let $section = $("<section>").attr("id", "middle-earth");
   // 2. append the section to the body of the DOM.
   $("body").append($section);
   // 3. use a for loop to iterate over the lands array that does the following:
@@ -175,9 +175,17 @@ const beautifulStranger = () => {
 // ============
 const forgeTheFellowShip = () => {
   // 1. create a new div with an id 'the-fellowship'
+  let $div = $("<div>").attr("id", "the-fellowship");
   // 2. add an h1 with the text 'The Fellowship' to this new div
+  let $h1 = $("<h1>").text("The Fellowship");
   // 3. append the fellowship to middle-earth
+  $("#middle-earth").append($div);
+  $("#the-fellowship").append($h1);
   // 4. add the unordered lists of hobbits and buddies to 'the-fellowship'
+  let $fellowshipHobbits = $("#Rivendell").children("ul");
+  let $fellowshipBuddies = $("aside").children();
+  $("#the-fellowship").append($fellowshipBuddies);
+  $("#the-fellowship").append($fellowshipHobbits);
 };
 
 // COMMIT YOUR WORK
