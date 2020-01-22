@@ -276,8 +276,23 @@ const weWantsIt = () => {
 // ============
 const thereAndBackAgain = () => {
   // 1. remove Gollum and the Ring from the DOM
+  $("#gollum").remove();
+  $("#the-ring").remove();
   // 2. remove all the baddies from the DOM
+  $("#Mordor")
+    .children("ul")
+    .remove();
   // 3. Move all the hobbits back to the shire
+  let $frodoAndSam = $("#Mordor").children("li");
+  let $merry = $("#the-fellowship")
+    .find("li")
+    .eq(5);
+  let $pippin = $("#the-fellowship")
+    .find("li")
+    .eq(6);
+  $("#The-Shire").append($frodoAndSam);
+  $("#The-Shire").append($merry);
+  $("#The-Shire").append($pippin);
 };
 
 // COMMIT YOUR WORK
