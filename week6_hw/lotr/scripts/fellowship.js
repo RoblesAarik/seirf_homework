@@ -161,7 +161,6 @@ const beautifulStranger = () => {
   // 1. change the buddy 'Strider' textnode to "Aragorn"
   // hint: You can get a list of elements by tag name, such as 'aside'
   $("aside")
-    .children()
     .find("li")
     .eq(3)
     .text("Aragorn");
@@ -197,7 +196,6 @@ const forgeTheFellowShip = () => {
 const theBalrog = () => {
   // 1. change the 'Gandalf' text to 'Gandalf the White'
   $("#the-fellowship")
-    .children()
     .find("li")
     .eq(0)
     .text("Gandalf the White")
@@ -217,13 +215,11 @@ const hornOfGondor = () => {
   alert("The horn of Gondor has been blown!");
   // 2. Boromir's been killed by the Uruk-hai! Put a linethrough on Boromir's name
   $("#the-fellowship")
-    .children()
     .find("li")
     .eq(4)
     .css("text-decoration", "line-through");
   // 3. Tricky: Remove the Uruk-Hai from the Baddies on the page
   $("#Mordor")
-    .children()
     .find("li")
     .eq(2)
     .remove();
@@ -237,7 +233,17 @@ const hornOfGondor = () => {
 // ============
 const itsDangerousToGoAlone = () => {
   // 1. take Frodo and Sam out of the fellowship and move them to Mordor (they don't need to be inside a ul in Mordor)
+  let $frodo = $("#the-fellowship")
+    .find("li")
+    .eq(5);
+  let $sam = $("#the-fellowship")
+    .find("li")
+    .eq(6);
+  $("#Mordor").append($frodo);
+  $("#Mordor").append($sam);
   // 2. add a div with an id of 'mount-doom' to Mordor
+  let $div = $("<div>").attr("id", "mount-doom");
+  $("#Mordor").append($div);
 };
 
 // COMMIT YOUR WORK
