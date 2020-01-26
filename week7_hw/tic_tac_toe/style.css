@@ -1,0 +1,28 @@
+.square {
+  border: 1px solid black;
+  display: inline-block;
+  height: 250px;
+  width: 250px;
+  margin: 0 auto;
+}
+
+.container {
+  height: 49em;
+  width: 49em;
+}
+
+.X {
+  border: 1px solid black;
+  display: inline-block;
+  height: 250px;
+  width: 250px;
+  margin: 0 auto;
+}
+
+.O {
+  border: 1px solid black;
+  display: inline-block;
+  height: 250px;
+  width: 250px;
+  margin: 0 auto;
+}
