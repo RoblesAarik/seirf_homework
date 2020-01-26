@@ -19,7 +19,7 @@ $(() => {
     });
   };
 
-  // Action that will
+  // Action that will hadle the add button
   const handleCLick = () => {
     const inputBoxValue = $("#input-box").val();
 
