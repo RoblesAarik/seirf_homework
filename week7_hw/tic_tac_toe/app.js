@@ -66,7 +66,7 @@ $(() => {
     ) {
       alert("Player One Wins!");
     } else {
-      false;
+      return false;
     }
   };
 
@@ -135,18 +135,16 @@ $(() => {
     ) {
       alert("Player Two Wins!");
     } else {
-      false;
+      return false;
     }
   };
 
   // Check for Draw
   const checkDraw = () => {
     if (
-      $(".container")
-        .children()
-        .text().length === 9 &&
-      !checkPlayerOneWin() &&
-      !checkPlayerTwoWin()
+      $(".container").text().length === 9 &&
+      checkPlayerOneWin() === false &&
+      checkPlayerTwoWin() === false
     ) {
       alert("Draw");
     }
@@ -174,18 +172,22 @@ $(() => {
   }
 
   // X and O function
-  const shapes = ["X", "O"];
+  const XandO = ["X", "O"];
 
   const handleClick = event => {
-    let $currentShape = $(event.currentTarget);
-    $currentShape.text(shapes[0]);
-    $currentShape.removeClass();
-    $currentShape.addClass(shapes[0]);
-    shapes.push(shapes[0]);
-    shapes.shift([0]);
-    checkPlayerOneWin();
-    checkPlayerTwoWin();
-    checkDraw();
+    let $currentLetter = $(event.target);
+    if ($(event.target).text() === "") {
+      $currentLetter.text(XandO[0]);
+      $currentLetter.removeClass();
+      $currentLetter.addClass(XandO[0]);
+      XandO.push(XandO[0]);
+      XandO.shift([0]);
+      checkPlayerOneWin();
+      checkPlayerTwoWin();
+      checkDraw();
+    } else {
+      alert("Space taken, Choose new space");
+    }
   };
 
   $(".square").on("click", handleClick);
