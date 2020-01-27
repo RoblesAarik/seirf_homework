@@ -1,14 +1,17 @@
 .square {
-  border: 1px solid black;
-  display: inline-block;
-  height: 250px;
-  width: 250px;
-  margin: 0 auto;
+  border: 4px solid black;
+  display: flex;
+  flex-direction: column;
+  height: 252px;
+  width: 252px;
+  text-align: center;
 }
 
 .container {
-  height: 49em;
-  width: 49em;
+  display: flex;
+  flex-wrap: wrap;
+  height: 50em;
+  width: 50em;
 }
 
 .X {
@@ -17,6 +20,9 @@
   height: 250px;
   width: 250px;
   margin: 0 auto;
+  text-align: center;
+  font-size: 250px;
+  color: red;
 }
 
 .O {
@@ -25,4 +31,7 @@
   height: 250px;
   width: 250px;
   margin: 0 auto;
+  text-align: center;
+  font-size: 250px;
+  color: blue;
 }
