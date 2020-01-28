@@ -160,16 +160,14 @@ $(() => {
 
   // create the gameboard
   const $createGameBoard = () => {
-    let $div = $("<div>")
-      .addClass("square")
-      .attr("id", i);
-    $(".container").append($div);
+    for (i = 1; i <= 9; i++) {
+      let $div = $("<div>")
+        .addClass("square")
+        .attr("id", i);
+      $(".container").append($div);
+    }
   };
-
-  // for loop that creates the gameboard
-  for (i = 1; i <= 9; i++) {
-    $createGameBoard();
-  }
+  $createGameBoard();
 
   // X and O function
   const XandO = ["X", "O"];
