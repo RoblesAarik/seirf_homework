@@ -16,8 +16,10 @@
     <ul>
       <% for (let i = 0; i < pokemon.length; i++) { %>
       <li>
-        <%= pokemon[i].name.charAt(0).toUpperCase() + pokemon[i].name.slice(1)
-        %>
+        <a href="/pokemon/<%=i%>"
+          ><%= pokemon[i].name.charAt(0).toUpperCase() +
+          pokemon[i].name.slice(1) %></a
+        >
       </li>
       <% } %>
     </ul>
