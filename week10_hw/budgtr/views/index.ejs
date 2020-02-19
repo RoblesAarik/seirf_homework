@@ -14,7 +14,7 @@
     <title>Document</title>
   </head>
   <body>
-    <div>
+    <div class="container">
       <h1>Budgtr ALL</h1>
       <table>
         <% for (let i = 0; i < budget.length; i++) { %>
@@ -23,7 +23,7 @@
             <%= budget[i].date %>
           </td>
           <td>
-            <a href="#"><%= budget[i].name %></a>
+            <a href="/budget/<%=i%>"><%= budget[i].name %></a>
           </td>
           <td>
             <%= budget[i].amount %> <% } %>

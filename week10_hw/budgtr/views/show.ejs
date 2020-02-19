@@ -3,9 +3,30 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"
+    />
     <title>Document</title>
   </head>
-  <body></body>
+  <body>
+    <div class="container">
+      <h1><%= budget.name %></h1>
+      <a class="button" href="/budget">Index</a>
+      <h4>Date</h4>
+      <p><%= budget.date %></p>
+      <h4>Name</h4>
+      <p><%= budget.name %></p>
+      <h4>From</h4>
+      <p><%= budget.from %></p>
+      <h4>Amount</h4>
+      <p><%= budget.amount %></p>
+      <h4>Tags</h4>
+      <p><%= budget.tags %></p>
+    </div>
+  </body>
 </html>
