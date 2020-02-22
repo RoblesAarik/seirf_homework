@@ -14,6 +14,11 @@ app.get("/pokemon", (req, res) => {
   });
 });
 
+// New Page
+app.get("/pokemon/new", (req, res) => {
+  res.render("new.ejs");
+});
+
 // Show Page
 app.get("/pokemon/:id", (req, res) => {
   res.render("show.ejs", {

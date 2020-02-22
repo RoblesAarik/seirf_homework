@@ -7,9 +7,13 @@
   </head>
   <body>
     <style>
+      body {
+        text-align: center;
+      }
       li {
         font-size: 25px;
         list-style: none;
+        padding: 10px;
       }
     </style>
     <h1>This is <%= pokemon.name %></h1>
@@ -29,5 +33,6 @@
       <li>SP Defense: <%= pokemon.stats.spdefense %></li>
       <li>Speed: <%= pokemon.stats.speed %></li>
     </ul>
+    <a href="/pokemon">Go back to index</a>
   </body>
 </html>

@@ -31,10 +31,18 @@
         border: 1px solid grey;
         border-radius: 10px;
       }
+      nav {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+      }
     </style>
-    <h1>Welcome Trainer!</h1>
-    <% for(let i = 0; i < pokemon.length; i++) { %>
-    <img class="pic" src="<%=pokemon[i].img%>" alt="" />
+    <nav>
+      <h1>Welcome Trainer!</h1>
+      <a href="/pokemon/new">Add New Pokemon</a>
+    </nav>
+    <% for(let i = 0; i < 15; i++) { %>
+    <a href="/pokemon/<%= i%>"><img src="<%=pokemon[i].img%>" alt=""/></a>
     <% } %>
   </body>
 </html>
