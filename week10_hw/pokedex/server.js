@@ -14,6 +14,13 @@ app.get("/pokemon", (req, res) => {
   });
 });
 
+// Show Page
+app.get("/pokemon/:id", (req, res) => {
+  res.render("show.ejs", {
+    pokemon: pokemon[req.params.id],
+  });
+});
+
 app.listen(port, () => {
   console.log("listening");
 });

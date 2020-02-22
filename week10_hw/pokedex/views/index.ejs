@@ -3,12 +3,38 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
     <title>Pokedex</title>
   </head>
   <body>
+    <style>
+      body {
+        text-align: center;
+      }
+      img {
+        margin: 5px;
+        padding: 10px;
+      }
+      img:hover {
+        border: 1px solid grey;
+        border-radius: 10px;
+      }
+    </style>
     <h1>Welcome Trainer!</h1>
     <% for(let i = 0; i < pokemon.length; i++) { %>
-    <li><img src="<%=pokemon[i].img%>" alt="" /></li>
+    <img class="pic" src="<%=pokemon[i].img%>" alt="" />
     <% } %>
   </body>
 </html>
