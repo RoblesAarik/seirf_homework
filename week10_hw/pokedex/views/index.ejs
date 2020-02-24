@@ -41,7 +41,7 @@
       <h1>Welcome Trainer!</h1>
       <a href="/pokemon/new">Add New Pokemon</a>
     </nav>
-    <% for(let i = 0; i < 15; i++) { %>
+    <% for(let i = 0; i < pokemon.length; i++) { %>
     <a href="/pokemon/<%= i%>"><img src="<%=pokemon[i].img%>" alt=""/></a>
     <% } %>
   </body>
