@@ -20,6 +20,9 @@
   </head>
   <body>
     <style>
+      a {
+        text-decoration: none;
+      }
       body {
         text-align: center;
       }
@@ -39,10 +42,11 @@
     </style>
     <nav>
       <h1>Welcome Trainer!</h1>
-      <a href="/pokemon/new">Add New Pokemon</a>
+      <button><a href="/pokemon/new">Add New Pokemon</a></button>
     </nav>
     <% for(let i = 0; i < pokemon.length; i++) { %>
     <a href="/pokemon/<%= i%>"><img src="<%=pokemon[i].img%>" alt=""/></a>
+    <a href="/pokemon/<%= i %>/edit">Edit</a>
     <% } %>
   </body>
 </html>
