@@ -3,6 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
     <title>Document</title>
   </head>
   <body>
@@ -15,7 +28,28 @@
         list-style: none;
         padding: 10px;
       }
+      nav {
+        display: flex;
+        justify-content: space-evenly;
+        align-content: center;
+        padding-top: 20px;
+        background-color: whitesmoke;
+      }
+      button {
+        margin-top: 10px;
+      }
+      a {
+        text-decoration: none;
+      }
+      img {
+        border: 2px solid black;
+        box-shadow: 5px 5px grey;
+      }
     </style>
+    <nav>
+      <h1>Pokemon Entry</h1>
+      <button><a href="/pokemon">Go back to index</a></button>
+    </nav>
     <h1>This is <%= pokemon.name %></h1>
     <img src="<%= pokemon.img%>" alt="" />
     <h2>Pokemon Type:</h2>
@@ -33,6 +67,5 @@
       <li>SP Defense: <%= pokemon.stats.spdefense %></li>
       <li>Speed: <%= pokemon.stats.speed %></li>
     </ul>
-    <a href="/pokemon">Go back to index</a>
   </body>
 </html>
