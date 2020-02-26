@@ -19,6 +19,15 @@
     <title>Document</title>
   </head>
   <body>
+    <style>
+      body {
+        text-align: center;
+        background-color: #f9d89e;
+      }
+      form {
+        padding-top: 90px;
+      }
+    </style>
     <form action="/pokemon/<%= id %>?_method=PUT" method="POST">
       Name: <input type="text" name="name" value="<%= pokemon.name %>" /><br />
       img : <input type="text" name="img" value="<%= pokemon.img %>" /><br />
@@ -55,7 +64,7 @@
         name="speed"
         value="<%= pokemon.stats.speed %>"
       /><br />
-      <input type="submit" name="" value="Edit Pokemon" />
+      <input class="submit" type="submit" name="" value="Edit Pokemon" />
     </form>
   </body>
 </html>

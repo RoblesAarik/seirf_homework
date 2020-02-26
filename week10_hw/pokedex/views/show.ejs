@@ -22,6 +22,10 @@
     <style>
       body {
         text-align: center;
+        background-color: #f9d89e;
+      }
+      .container {
+        padding-top: 25px;
       }
       li {
         font-size: 25px;
@@ -34,6 +38,7 @@
         align-content: center;
         padding-top: 20px;
         background-color: whitesmoke;
+        border-bottom: 1px solid black;
       }
       button {
         margin-top: 10px;
@@ -50,22 +55,24 @@
       <h1>Pokemon Entry</h1>
       <button><a href="/pokemon">Go back to index</a></button>
     </nav>
-    <h1>This is <%= pokemon.name %></h1>
-    <img src="<%= pokemon.img%>" alt="" />
-    <h2>Pokemon Type:</h2>
-    <ul>
-      <% for(let i = 0; i < pokemon.type.length; i++) { %>
-      <li><%= pokemon.type[i] %></li>
-      <% } %>
-    </ul>
-    <h2>Stats:</h2>
-    <ul>
-      <li>Health: <%= pokemon.stats.hp %></li>
-      <li>Attack: <%= pokemon.stats.attack %></li>
-      <li>Defense: <%= pokemon.stats.defense %></li>
-      <li>SP Attack: <%= pokemon.stats.spattack %></li>
-      <li>SP Defense: <%= pokemon.stats.spdefense %></li>
-      <li>Speed: <%= pokemon.stats.speed %></li>
-    </ul>
+    <div class="container">
+      <h1>This is <%= pokemon.name %></h1>
+      <img src="<%= pokemon.img%>" alt="" />
+      <h2>Pokemon Type:</h2>
+      <ul>
+        <% for(let i = 0; i < pokemon.type.length; i++) { %>
+        <li><%= pokemon.type[i] %></li>
+        <% } %>
+      </ul>
+      <h2>Stats:</h2>
+      <ul>
+        <li>Health: <%= pokemon.stats.hp %></li>
+        <li>Attack: <%= pokemon.stats.attack %></li>
+        <li>Defense: <%= pokemon.stats.defense %></li>
+        <li>SP Attack: <%= pokemon.stats.spattack %></li>
+        <li>SP Defense: <%= pokemon.stats.spdefense %></li>
+        <li>Speed: <%= pokemon.stats.speed %></li>
+      </ul>
+    </div>
   </body>
 </html>
