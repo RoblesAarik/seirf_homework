@@ -88,6 +88,13 @@ app.put("/pokemon/:id", (req, res) => {
   res.redirect("/pokemon");
 });
 
+// delete route
+app.delete("/pokemon/:id", (req, res) => {
+  pokemon.splice(req.params.id, 1);
+  res.redirect("/pokemon");
+});
+
+// app listener
 app.listen(port, () => {
   console.log("listening");
 });
