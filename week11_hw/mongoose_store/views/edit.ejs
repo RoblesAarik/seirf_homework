@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit page</title>
+  </head>
+  <body>
+    <h1>Edit Item</h1>
+    <form action="/items/<%= items.id %>?_method=PUT" method="POST">
+      Name: <input type="text" name="name" value="<%= items.name %>" /> <br />
+      Description:
+      <input type="text" name="description" value="<%=items.description%>" />
+      <br />
+      Image: <input type="text" name="image" value="<%=items.img%>" /> <br />
+      Price: <input type="text" name="price" value="<%= items.price%>" /> <br />
+      Quantity : <input type="text" name="qty" value="<%= items.qty %>" />
+      <br />
+      <input type="submit" name="" value="Submit Changes" />
+    </form>
+  </body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Show Page</title>
+  </head>
+  <body>
+    <a href="/items">Back to home</a>
+    <h1><%= items.name %></h1>
+    <div class="product">
+      <img src="<%= items.img %>" alt="no pic" />
+      <p><%= items.description %></p>
+      <h3><%= items.qty %> remaining</h3>
+      <button>Buy</button>
+      <a href="/items/<%= items.id%>/edit">Edit this product</a>
+      <button>Delete</button>
+    </div>
+  </body>
+</html>
