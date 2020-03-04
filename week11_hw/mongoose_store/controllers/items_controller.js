@@ -12,6 +12,18 @@ router.get("/", (req, res) => {
   });
 });
 
+// New Route
+router.get("/new", (req, res) => {
+  res.render("new.ejs");
+});
+
+// Create Route
+router.post("/", (req, res) => {
+  Items.create(req.body, (err, result) => {
+    res.redirect("/items");
+  });
+});
+
 //  Seed route
 router.get("/seed", (req, res) => {
   Items.create([
@@ -52,6 +64,13 @@ router.get("/:id", (req, res) => {
   });
 });
 
+// Delete Route
+router.delete("/:id", (req, res) => {
+  Items.findByIdAndDelete(req.params.id, (err, data) => {
+    res.redirect("/items");
+  });
+});
+
 // edit route
 router.get("/:id/edit", (req, res) => {
   Items.findById(req.params.id, (err, foundItems) => {
@@ -59,4 +78,26 @@ router.get("/:id/edit", (req, res) => {
       items: foundItems,
     });
   });
+});
+
+//  PUT / Update Route
+router.put("/:id", (req, res) => {
+  Items.findByIdAndUpdate(
+    req.params.id,
+    req.body,
+    { new: true },
+    (err, updateModel) => {
+      res.redirect("/items");
+    }
+  );
+});
+
+// buy route
+router.put("/:id/buy", (req, res) => {
+  Items.findByIdAndUpdate(
+    req.params.id,
+    { $inc: { qty: -1 } },
+    (err, product) => {}
+  );
+  res.redirect("back");
 });

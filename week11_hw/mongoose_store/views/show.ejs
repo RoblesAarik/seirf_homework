@@ -4,17 +4,31 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Show Page</title>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <a href="/items">Back to home</a>
-    <h1><%= items.name %></h1>
+    <h1 class="name"><%= items.name %></h1>
     <div class="product">
       <img src="<%= items.img %>" alt="no pic" />
       <p><%= items.description %></p>
+      <h3>Price: $<%= items.price %></h3>
+      <% if (items.qty <= 0) { %>
+      <h3>OUT OF STOCK</h3>
+      <% } else { %>
       <h3><%= items.qty %> remaining</h3>
-      <button>Buy</button>
+      <form action="/items/<%= items.id%>/buy?_method=put" method="POST">
+        <button id="buy">Buy</button>
+      </form>
+      <% } %>
       <a href="/items/<%= items.id%>/edit">Edit this product</a>
-      <button>Delete</button>
+      <form action="/items/<%= items.id %>?_method=DELETE" method="POST">
+        <input type="submit" value="DELETE" />
+      </form>
     </div>
   </body>
 </html>
