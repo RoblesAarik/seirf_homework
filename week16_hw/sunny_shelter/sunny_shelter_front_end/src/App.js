@@ -1,5 +1,4 @@
 import React from "react";
-import Show from "./components/Show";
 import "./App.css";
 
 let baseURL = "http://localhost:3003";
@@ -24,33 +23,14 @@ class App extends React.Component {
   };
 
   deleteAnimal = id => {
-    fetch(baseURL + "/animal" + id, {
+    fetch(baseURL + "/animals/" + id, {
       method: "DELETE",
     }).then(res => {
-      const animalArr = this.state.animals.filter(animals => {
-        return animals.id !== id;
+      const animalsArr = this.state.animals.filter(animal => {
+        return animal._id !== id;
       });
-      this.setState({ animals: animalArr });
+      this.setState({ animals: animalsArr });
     });
-  };
-
-  toggleAdoption = animal => {
-    fetch(baseURL + "/animals" + animal._id, {
-      method: "PUT",
-      body: JSON.stringify({ adopted: !animal.adopted }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
-      .then(res => res.json())
-      .then(resJson => {
-        const copyAnimals = [...this.state.animals];
-        const findIndex = this.state.animals.findIndex(
-          animal => animal._id === resJson._id
-        );
-        copyAnimals[findIndex].adopted = resJson.adoption;
-        this.setState({ animals: copyAnimals });
-      });
   };
 
   render() {
@@ -64,9 +44,7 @@ class App extends React.Component {
             {this.state.animals.map(animal => (
               <tr key={animal._id}>
                 <td>{animal.name}</td>
-                <td onClick={() => this.toggleAdoption(animal)}>
-                  Pending Adoption
-                </td>
+                <td>Pending Adoption: {animal.adopted}</td>
                 <td onClick={() => this.deleteAnimal(animal._id)}>X</td>
               </tr>
             ))}
