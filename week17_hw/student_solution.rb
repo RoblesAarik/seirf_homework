@@ -102,3 +102,23 @@ p colors.reverse
 # 3 Print out all of the colors in the array with all capital letters.
 
 p colors.map{|color| color.capitalize}
+
+# Methods
+
+# Write a method named find_area that finds the area of a rectangle when given values for width and height
+
+def find_area height, width
+    area = height * width
+    p area
+end
+
+find_area(10,40)
+
+# Write a method named multiply_each_by_five that will loop over the given nums array below and print each number multiplied by 5
+nums = [5, 5, 6, 7, 2, 4, 3, 2, 1, 9, 7, 6, 0, 0]
+
+def multiply_each_by_five arr
+   p arr.map{|nums| nums * 5}
+end
+
+multiply_each_by_five(nums)
