@@ -122,3 +122,42 @@ def multiply_each_by_five arr
 end
 
 multiply_each_by_five(nums)
+
+# Methods with a Hash
+
+book = {
+  title: 'The Great Gatsby',
+  author: 'F Scott Fitzgerald',
+  year: 1925,
+  price: 10
+}
+
+lamp = {
+  type: 'reading',
+  brand: 'Ikea',
+  price: 25
+}
+
+table = {
+  type: 'bed side',
+  brand: 'Crate & Barrel',
+  color: 'birch',
+  price: 50
+}
+
+# Write a method named print_price that will take in any hash and return the price of the item.
+
+def print_price hash
+    p hash[:price]
+end
+
+print_price(book)
+
+# Write a method named print_item_sums that will take in two hashes and will return the sum of the prices for the items in the hashes.
+
+def print_item_sums hash1, hash2
+    sum = hash1[:price] + hash2[:price]
+    p sum
+end
+
+print_item_sums(book, table)
