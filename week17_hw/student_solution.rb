@@ -161,3 +161,17 @@ def print_item_sums hash1, hash2
 end
 
 print_item_sums(book, table)
+
+# Euler Problem
+
+def mupltiples_1000
+    sum = 0
+    for i in 1 ... 1000
+        if i % 3 == 0 || i % 5 == 0
+          sum =  i += sum
+        end
+    end
+    p sum
+end
+
+mupltiples_1000
