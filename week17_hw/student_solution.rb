@@ -175,3 +175,32 @@ def mupltiples_1000
 end
 
 mupltiples_1000
+
+# Primes
+
+# Write a method called check_prime? that will test whether a number is Prime. The method will return true if Prime, false if not.
+
+def check_prime? num
+   (2..num-1).none? {|n| num % n == 0}
+end
+
+p check_prime? 199
+p check_prime? 6
+p check_prime? 2
+p check_prime? 9
+p check_prime? 21
+
+
+#  Write another method called get_primes that will print all the Primes up to an arbitrary limit. For example, if you invoke your method with get_primes 100, it will print all the Prime numbers up to and including 100.
+
+def get_primes num
+    primes = []
+    for i in 0 ... num do
+        if check_prime?(i) == true
+            primes.push(i)
+        end
+    end
+    p primes
+end
+
+get_primes(100)
