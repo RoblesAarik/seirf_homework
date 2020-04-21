@@ -20,8 +20,6 @@ class Player
         deck.shift
     end
 
-
-
     def sum
         if self.hand.length == 0
             sum = 0
@@ -30,6 +28,10 @@ class Player
         end
     end
 
+    def bet
+        @bankroll = self.bankroll - 10
+        p "You bet $10. You now have $#{self.bankroll}"
+     end
 end
 
 
@@ -56,6 +58,8 @@ class Dealer
         @sum = self.hand[0].value + self.hand[1].value
         end
     end
+
+    
 
 
 end
@@ -135,11 +139,13 @@ end
 
 def check_win
     if $player1.sum > $dealer1.sum
-        p "You win!"
+        $player1.bankroll = $player1.bankroll + 20
+        p "You win! You now have $#{$player1.bankroll}"
     elsif $player.sum < $dealer1.sum
         p "Dealer wins"
     elsif $player1.sum == $dealer1.sum
-        p "Tie try again"
+        $player1.bankroll = $player1.bankroll + 10
+        p "Tie try again, You now have $#{$player1.bankroll}"
     end
     p "Your score: #{$player1.sum}"
     p "Dealer Score: #{$dealer1.sum}"
@@ -150,10 +156,12 @@ def start_game
     p "Welcome #{$player1.name}"
 end
 
-def round1
+def rounds
     deck =[]
     ready_cards deck
     deal_cards deck
+    $player1.bankroll = $player1.bankroll - 10
+    p "You bet $10, You now have $#{$player1.bankroll}"
     check_win
    
 end
@@ -161,4 +169,4 @@ end
 
 
 start_game
-round1
+rounds
