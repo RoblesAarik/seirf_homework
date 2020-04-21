@@ -30,8 +30,14 @@ class Player
 
     def bet
         @bankroll = self.bankroll - 10
-        p "You bet $10. You now have $#{self.bankroll}"
+        p "You now have $#{self.bankroll}"
      end
+
+     def win_money
+        @bankroll = self.bankroll + 20
+        p "You have $#{self.bankroll}"
+     end
+
 end
 
 
@@ -59,7 +65,14 @@ class Dealer
         end
     end
 
+    def lose_money
+        @bankroll = self.bankroll - 10
+    end
     
+    def win_money
+        @bankroll = self.bankroll + 10
+    end
+
 
 
 end
@@ -68,6 +81,7 @@ end
 
 # create new player
 def create_players
+    p "Welcome to the casino, Whats your name?"
     name = gets.chomp
     $player1 = Player.new name
     $dealer1 = Dealer.new
@@ -113,14 +127,25 @@ def shuffle deck
     deck.shuffle!
 end
 
-
-# get deck and shuffle cards
+# Create first deck
 def ready_cards deck
-create_deck deck
-shuffle deck
-# p deck.length
+    create_deck deck
+    shuffle deck
 end
 
+
+# next deck and shuffle cards
+def more_decks deck
+    if deck.length == 0
+
+    create_deck deck
+    shuffle deck
+
+    else 
+        deal_cards deck
+    end
+    # p deck.length
+end
 
 # Deal cards
 def deal_cards deck
@@ -138,32 +163,83 @@ end
 # Game Logic
 
 def check_win
-    if $player1.sum > $dealer1.sum
-        $player1.bankroll = $player1.bankroll + 20
-        p "You win! You now have $#{$player1.bankroll}"
-    elsif $player.sum < $dealer1.sum
+
+    if $player1.sum > 21
+
+        p "You lose! You bust"
+        $dealer1.win_money
+
+    elsif $dealer1.sum > 21
+
+        p "You Win! Dealer bust"
+        $dealer1.lose_money
+        $player1.win_money
+
+    elsif $player1.sum == 21
+
+        p 'Blackjack! You win!'
+        $player1.win_money
+        $dealer1.lose_money
+
+    elsif $player1.sum > $dealer1.sum
+
+        p "You win!"
+        $player1.win_money
+        $dealer1.lose_money
+
+    elsif $player1.sum < $dealer1.sum
+
         p "Dealer wins"
+        $dealer1.win_money
+
     elsif $player1.sum == $dealer1.sum
+
         $player1.bankroll = $player1.bankroll + 10
+        $dealer1.win_money
         p "Tie try again, You now have $#{$player1.bankroll}"
+
     end
     p "Your score: #{$player1.sum}"
     p "Dealer Score: #{$dealer1.sum}"
 end
+
 
 def start_game
     create_players
     p "Welcome #{$player1.name}"
 end
 
+
 def rounds
-    deck =[]
-    ready_cards deck
-    deal_cards deck
-    $player1.bankroll = $player1.bankroll - 10
-    p "You bet $10, You now have $#{$player1.bankroll}"
+    $deck =[]
+    $player1.bet
+    ready_cards $deck
+    deal_cards $deck
     check_win
-   
+    play_again?
+end
+
+def another_round
+    $player1.hand = []
+    $dealer1.hand = []
+    $player1.bet
+    more_decks $deck
+    check_win
+    play_again?
+end
+
+def play_again?
+    if $player1.bankroll == 0
+        p "Youre out of money time to go home, GAME OVER"
+    else
+    p "Would you like to play again, yes or no"
+    answer = gets.chomp
+    if answer.downcase == 'yes'
+        another_round 
+    elsif answer.downcase == 'no'
+        return p "Thanks for playing #{$player1.name}"
+    end
+end
 end
 
 
