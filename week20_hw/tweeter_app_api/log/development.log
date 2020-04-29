@@ -72,3 +72,121 @@ Processing by TweetsController#show as HTML
 Completed 200 OK in 10ms (Views: 2.3ms | ActiveRecord: 0.7ms | Allocations: 1141)
 
 
+Started GET "/tweets" for ::1 at 2020-04-28 21:18:07 -0700
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TweetsController#index as HTML
+  [1m[36mTweet Load (4.4ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets"[0m
+  ↳ app/controllers/tweets_controller.rb:5:in `index'
+Completed 200 OK in 52ms (Views: 8.8ms | ActiveRecord: 40.1ms | Allocations: 4131)
+
+
+Started POST "/tweets" for ::1 at 2020-04-28 21:18:59 -0700
+Processing by TweetsController#create as */*
+  Parameters: {"title"=>"new", "content"=>"ramon sucks", "author"=>"robby"}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 109)
+
+
+  
+ArgumentError (wrong number of arguments (given 2, expected 1)):
+  
+app/controllers/tweets_controller.rb:26:in `tweet_params'
+app/controllers/tweets_controller.rb:14:in `create'
+Started GET "/tweets" for ::1 at 2020-04-28 21:19:41 -0700
+Processing by TweetsController#index as HTML
+  [1m[36mTweet Load (1.8ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets"[0m
+  ↳ app/controllers/tweets_controller.rb:5:in `index'
+Completed 200 OK in 5ms (Views: 2.9ms | ActiveRecord: 1.8ms | Allocations: 1024)
+
+
+Started GET "/tweets" for ::1 at 2020-04-28 21:21:13 -0700
+Processing by TweetsController#index as HTML
+  [1m[36mTweet Load (0.4ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets"[0m
+  ↳ app/controllers/tweets_controller.rb:5:in `index'
+Completed 200 OK in 30ms (Views: 15.8ms | ActiveRecord: 10.4ms | Allocations: 3766)
+
+
+Started POST "/tweets" for ::1 at 2020-04-28 21:21:27 -0700
+Processing by TweetsController#create as */*
+  Parameters: {"title"=>"new", "content"=>"ramon sucks", "author"=>"robby"}
+Completed 400 Bad Request in 2ms (ActiveRecord: 0.0ms | Allocations: 426)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: tweet):
+  
+app/controllers/tweets_controller.rb:26:in `tweet_params'
+app/controllers/tweets_controller.rb:14:in `create'
+Started POST "/tweets" for ::1 at 2020-04-28 21:23:20 -0700
+Processing by TweetsController#create as */*
+  Parameters: {"title"=>"new", "content"=>"ramon sucks", "author"=>"robby"}
+Completed 400 Bad Request in 3ms (ActiveRecord: 0.0ms | Allocations: 418)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: tweet):
+  
+app/controllers/tweets_controller.rb:26:in `tweet_params'
+app/controllers/tweets_controller.rb:14:in `create'
+Started POST "/tweets" for ::1 at 2020-04-28 21:25:11 -0700
+Processing by TweetsController#create as */*
+  Parameters: {"title"=>"new", "content"=>"ramon sucks", "author"=>"robby"}
+Completed 400 Bad Request in 3ms (ActiveRecord: 0.0ms | Allocations: 411)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: tweet):
+  
+app/controllers/tweets_controller.rb:26:in `tweet_params'
+app/controllers/tweets_controller.rb:14:in `create'
+Started POST "/tweets" for ::1 at 2020-04-28 21:26:21 -0700
+Processing by TweetsController#create as */*
+  Parameters: {"tweet"=>{"title"=>"new", "content"=>"ramon sucks", "author"=>"robby"}}
+  [1m[35m (30.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/tweets_controller.rb:16:in `create'
+  [1m[36mTweet Create (39.3ms)[0m  [1m[32mINSERT INTO "tweets" ("title", "content", "author") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "new"], ["content", "ramon sucks"], ["author", "robby"]]
+  ↳ app/controllers/tweets_controller.rb:16:in `create'
+  [1m[35m (17.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/tweets_controller.rb:16:in `create'
+Completed 201 Created in 114ms (Views: 0.5ms | ActiveRecord: 98.6ms | Allocations: 4837)
+
+
+Started PUT "/tweets/3" for ::1 at 2020-04-28 21:49:38 -0700
+Processing by TweetsController#update as */*
+  Parameters: {"tweet"=>{"title"=>"new", "content"=>"ramon sucks", "author"=>"armando"}, "id"=>"3"}
+  [1m[36mTweet Load (1.6ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/tweets_controller.rb:24:in `update'
+Completed 500 Internal Server Error in 108ms (ActiveRecord: 1.9ms | Allocations: 3735)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'tweet' for Tweet.):
+  
+app/controllers/tweets_controller.rb:25:in `update'
+Started PUT "/tweets/3" for ::1 at 2020-04-28 21:51:06 -0700
+Processing by TweetsController#update as */*
+  Parameters: {"tweet"=>{"title"=>"new", "content"=>"ramon sucks", "author"=>"armando"}, "id"=>"3"}
+  [1m[36mTweet Load (1.0ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/tweets_controller.rb:24:in `update'
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/tweets_controller.rb:25:in `update'
+  [1m[36mTweet Update (1.2ms)[0m  [1m[33mUPDATE "tweets" SET "author" = $1 WHERE "tweets"."id" = $2[0m  [["author", "armando"], ["id", 3]]
+  ↳ app/controllers/tweets_controller.rb:25:in `update'
+  [1m[35m (27.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/tweets_controller.rb:25:in `update'
+Completed 200 OK in 150ms (Views: 0.4ms | ActiveRecord: 113.6ms | Allocations: 5694)
+
+
+Started DELETE "/tweets/3" for ::1 at 2020-04-28 21:51:15 -0700
+Processing by TweetsController#destroy as */*
+  Parameters: {"tweet"=>{"title"=>"new", "content"=>"ramon sucks", "author"=>"armando"}, "id"=>"3"}
+  [1m[36mTweet Load (1.1ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/tweets_controller.rb:30:in `destroy'
+  [1m[35m (4.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/tweets_controller.rb:30:in `destroy'
+  [1m[36mTweet Destroy (0.8ms)[0m  [1m[31mDELETE FROM "tweets" WHERE "tweets"."id" = $1[0m  [["id", 3]]
+  ↳ app/controllers/tweets_controller.rb:30:in `destroy'
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/tweets_controller.rb:30:in `destroy'
+Completed 204 No Content in 12ms (Views: 0.2ms | ActiveRecord: 7.4ms | Allocations: 2275)
+
+
