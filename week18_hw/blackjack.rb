@@ -24,7 +24,9 @@ class Player
         if self.hand.length == 0
             sum = 0
         else
-        @sum = self.hand[0].value + self.hand[1].value
+        @sum = for i in self.hand do
+            @sum + self.hand[i].value 
+        end
         end
     end
 
@@ -158,19 +160,35 @@ def deal_cards deck
 end
 
 
+def check_bust
+    if $player1.sum > 21
+        p "Bust you lose"
+    end
+end
+
+
 
 
 # Game Logic
 
+def hit_or_stay deck
+    p 'hit or stay'
+    answer = gets.chomp.downcase
+    if answer == 'hit'
+        $player1.player_hand deck
+        check_bust
+        p "Your cards:" 
+        p $player1.hand
+        hit_or_stay deck
+    elsif answer == 'stay'
+        check_win
+    end
+end
+
 def check_win
+    p "Dealers has a #{$dealer1.hand[1].face} of #{$dealer1.hand[1].suits} and a #{$dealer1.hand[1].face} of #{$dealer1.hand[1].suits}"
 
-    if $player1.sum > 21
-
-        p "You lose! You bust"
-        $dealer1.win_money
-
-    elsif $dealer1.sum > 21
-
+    if $dealer1.sum > 21
         p "You Win! Dealer bust"
         $dealer1.lose_money
         $player1.win_money
@@ -215,7 +233,7 @@ def rounds
     $player1.bet
     ready_cards $deck
     deal_cards $deck
-    check_win
+    hit_or_stay $deck
     play_again?
 end
 
@@ -224,7 +242,7 @@ def another_round
     $dealer1.hand = []
     $player1.bet
     more_decks $deck
-    check_win
+    hit_or_stay $deck
     play_again?
 end
 

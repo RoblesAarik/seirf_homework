@@ -19,8 +19,29 @@
       <h4>Bank Account</h2>
 
       <% let bankAccount = 0 %>
+      <% let amount = [] %>
+      <% const account = (budget) => { %>
 
-      <input type="text" placeholder="<%= bankAccount %>" />
+        <% for(let i = 0; i < budget.length; i++) { %>
+         <% amount.push(budget[i].amount) %>
+         
+          <% console.log(amount)%>
+        <% } %>
+     <% } %>
+
+    <% const sumOfAmounts = ( arr , sum) => { %>
+      <%  sum = sum || 0; %>
+      <%  if (arr.length === 0){ %>
+        <% return sum; %>
+        <% } %>
+        <% sum += arr.shift(); %>
+        <% return sumOfAmounts( arr , sum ); %>
+        <% } %>
+
+     
+          <h5><%= bankAccount %></h5>
+          <% account(budget) %>
+          <% sumOfAmounts(amount) %>
       <table>
         <% for (let i = 0; i < budget.length; i++) { %>
         <tr>
@@ -38,5 +59,6 @@
 
       <a class="button" href="/budget/new">Create New Item</a>
     </div>
+    
   </body>
 </html>

@@ -34,7 +34,17 @@ router.delete("/:id", (req, res) => {
 
 // Update
 router.put("/:id", (req, res) => {
-  Animal.findByIdAndUpdate(req.params.id, req.body, { new: true });
+  Animal.findByIdAndUpdate(
+    req.params.id,
+    req.body,
+    { new: true },
+    (err, updatedAnimal) => {
+      if (err) {
+        res.status(400).json({ error: err.message });
+      }
+      res.status(200).json(updatedAnimal);
+    }
+  );
 });
 
 module.exports = router;
